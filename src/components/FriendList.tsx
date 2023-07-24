@@ -1,3 +1,5 @@
+import Friend from "./Friend";
+
 const initialFriends = [
   {
     id: 118836,
@@ -20,7 +22,13 @@ const initialFriends = [
 ];
 
 const FriendList = () => {
-  return <div>FriendList</div>;
+  return (
+    <div>
+      {initialFriends.map((friend) => (
+        <Friend friend={friend} key={friend.id} />
+      ))}
+    </div>
+  );
 };
 
 export default FriendList;
