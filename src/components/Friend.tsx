@@ -1,9 +1,14 @@
 import Button from "./Button";
 import { FriendProps } from "../types";
 
-const Friend: React.FC<{ friend: FriendProps }> = ({ friend }) => {
+const Friend: React.FC<FriendProps> = ({
+  friend,
+  selectedFriend,
+  onSelection,
+}) => {
+  const isSelected = friend.id === selectedFriend?.id;
   return (
-    <li>
+    <li className={isSelected ? "selected" : ""}>
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
       {friend.balance < 0 && (
@@ -18,7 +23,9 @@ const Friend: React.FC<{ friend: FriendProps }> = ({ friend }) => {
       )}
       {friend.balance === 0 && <p>You and {friend.name} are even</p>}
 
-      <Button>Select</Button>
+      <Button onClick={() => onSelection(friend)}>
+        {isSelected ? "Close" : "Select"}
+      </Button>
     </li>
   );
 };

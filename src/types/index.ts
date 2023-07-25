@@ -3,18 +3,37 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-interface FriendProps {
+interface Friend {
   id: number;
   name: string;
   image: string;
   balance: number;
 }
+
+interface FriendProps {
+  friend: Friend;
+  selectedFriend: Friend | null;
+  onSelection: (friend: Friend | null) => void;
+}
 interface FormAddFriendProps {
-  onAddFriend: (friend: FriendProps) => void;
+  onAddFriend: (friend: Friend) => void;
 }
 
 interface FriendListProps {
-  friends: FriendProps[];
+  friends: Friend[];
+  selectedFriend: Friend | null;
+  onSelection: (friend: Friend | null) => void;
 }
 
-export type { ButtonProps, FriendProps, FormAddFriendProps, FriendListProps };
+interface FormSplitBillProps {
+  selectedFriend: Friend | null;
+}
+
+export type {
+  ButtonProps,
+  FriendProps,
+  FormAddFriendProps,
+  FriendListProps,
+  Friend,
+  FormSplitBillProps,
+};
