@@ -1,14 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import Button from "./Button";
-interface Friend {
-  id: number;
-  name: string;
-  image: string;
-  balance: number;
-}
-interface FormAddFriendProps {
-  onAddFriend: (friend: Friend) => void;
-}
+import { FormAddFriendProps } from "../types";
 
 const FormAddFriend: React.FC<FormAddFriendProps> = ({ onAddFriend }) => {
   const [name, setName] = useState<string>("");

@@ -1,13 +1,5 @@
 import Friend from "./Friend";
-interface Friend {
-  id: number;
-  name: string;
-  image: string;
-  balance: number;
-}
-interface FriendListProps {
-  friends: Friend[];
-}
+import { FriendListProps } from "../types";
 
 const FriendList: React.FC<FriendListProps> = ({ friends }) => {
   return (

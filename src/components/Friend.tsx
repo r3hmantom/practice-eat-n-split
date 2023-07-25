@@ -1,11 +1,5 @@
 import Button from "./Button";
-
-interface FriendProps {
-  id: number;
-  name: string;
-  image: string;
-  balance: number;
-}
+import { FriendProps } from "../types";
 
 const Friend: React.FC<{ friend: FriendProps }> = ({ friend }) => {
   return (

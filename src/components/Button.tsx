@@ -1,7 +1,4 @@
-interface ButtonProps {
-  children: string;
-  onClick?: () => void;
-}
+import { ButtonProps } from "../types";
 
 const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
