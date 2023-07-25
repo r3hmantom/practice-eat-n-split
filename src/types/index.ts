@@ -27,6 +27,7 @@ interface FriendListProps {
 
 interface FormSplitBillProps {
   selectedFriend: Friend | null;
+  onSplitBill: (value: number) => void;
 }
 
 export type {
