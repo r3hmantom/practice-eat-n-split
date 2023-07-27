@@ -33,6 +33,20 @@ body {
   align-items: start;
 }
 
+@media screen and (max-width: 600px) {
+  .app {
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-add-friend {
+    margin-top: 7rem;
+  }
+}
+
 .button {
   background-color: var(--color-medium);
   color: #343a40;
